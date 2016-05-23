@@ -1,13 +1,10 @@
-# Everbridge Alert to CAP (XML/RSS) feed
-
+# Everbridge Alert to CAP (XML/RSS) feeds
 The point of these scripts is to generate a "CAP" feed from Everbridge alerts. Care was not given to generate a fully compliant CAP feed but just the quickest thing that worked allowing is to implement emergency alerting in digital display systems. In an attempt to limit required resources the file-based scripts use the file system instead of a database. Configuration variables are found at the top of each file.
 
 ## Credits
-
 Written by Patrick Cunningham (@pcunning) for University Housing, University of Oregon
 
 ## License
-
 The MIT License (MIT)
 Copyright (c) 2016 University of Oreogn
 
