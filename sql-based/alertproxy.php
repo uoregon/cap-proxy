@@ -1,12 +1,23 @@
 <?php
 // Set your return content type
+
+$mysql_host = '';
+$mysql_user = '';
+$mysql_pw = '';
+$mysql_db = '';
+
+$everbridge_user = "everbridge";
+$everbridge_pw = "";
+
+$dbsqli = new mysqli($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
+
 header('Content-type: application/xml');
 echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 ?>
 <rss version="2.0">
 <channel>
 <title>
-UOAlert CAP Feed
+CAP Feed
 </title>
 <link>
 </link>

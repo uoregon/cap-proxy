@@ -5,13 +5,13 @@ $mysql_user = '';
 $mysql_pw = '';
 $mysql_db = '';
 
-
 $everbridge_user = "everbridge";
 $everbridge_pw = "";
 
+$show_for_minutes = 15;
 
-$mysql_dbsqli = new mysqli($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 
+$dbsqli = new mysqli($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 
 if (isset($_SERVER['PHP_AUTH_USER']) AND $_SERVER['PHP_AUTH_USER'] == $everbridge_user AND $_SERVER['PHP_AUTH_PW'] == $everbridge_pw) {
 	//save to DB
@@ -22,7 +22,7 @@ if (isset($_SERVER['PHP_AUTH_USER']) AND $_SERVER['PHP_AUTH_USER'] == $everbridg
 		'".mysqli_real_escape_string($dbsqli,$data->body)."',
 		'".mysqli_real_escape_string($dbsqli,$_SERVER['PHP_AUTH_USER'])."',
 		NOW(),
-		DATE_ADD(NOW(), INTERVAL 15 MINUTE));")) {
+		DATE_ADD(NOW(), INTERVAL {$show_for_minutes} MINUTE));")) {
 		echo "Success";
 	}else{
 		echo "Fail";
